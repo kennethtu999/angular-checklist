@@ -5,18 +5,18 @@
   <div class="projects-header">
     <div class="welcome-wrapper">
       <div class="welcome-message">
-        <h1>Welcome to Angular Checklist!</h1>
-        <p class="welcome-subtitle">Curated list of common mistakes made when developing Angular applications.</p>
+        <h1>再一次的品質提升!</h1>
+        <p class="welcome-subtitle">以下是目已列管在系統中的需求.</p>
       </div>
       <img src="assets/undraw_checklist.svg" alt="Checklist" />
     </div>
   </div>
   <div class="projects-list-wrapper">
-    <h5>Your Projects</h5>
+    <h5>過濾後的所有需求</h5>
     <div class="projects-grid">
       <mat-card matRipple (click)="addProject()" class="add-project-card">
         <mat-icon>add</mat-icon>
-        Add Project
+        新增需求
       </mat-card>
       <mat-card (click)="navigateToProject(project.id)" *ngFor="let project of projects$ | async">
         <div class="card-ripple" matRipple></div>
@@ -26,7 +26,7 @@
         <mat-card-actions align="right">
           <div class="progress">
             <ac-score-chart class="primary" [score]="project.score"></ac-score-chart>
-            <span class="score">{{ project.score | percent: '.0-2' }} completed</span>
+            <span class="score">{{ project.score | percent: '.0-2' }} 已完成</span>
           </div>
           <button (click)="editProject($event, project)" (mousedown)="$event.stopPropagation()" mat-icon-button>
             <mat-icon>edit</mat-icon>

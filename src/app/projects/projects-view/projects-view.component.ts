@@ -37,7 +37,7 @@ export class ProjectsViewComponent implements OnInit {
   }
 
   addProject() {
-    this.openProjectDialog({ title: 'Add Project', submitButtonText: 'Create' })
+    this.openProjectDialog({ title: '新增需求', submitButtonText: '建立' })
       .pipe(
         map(({ payload: newProject }) => {
           this.store.dispatch(new AddProject(newProject));
@@ -52,8 +52,8 @@ export class ProjectsViewComponent implements OnInit {
     event.stopPropagation();
 
     this.openProjectDialog({
-      title: 'Edit Project',
-      submitButtonText: 'Save',
+      title: '編輯需求',
+      submitButtonText: '儲存',
       mode: ProjectDialogMode.Edit,
       project
     }).subscribe(result => {
